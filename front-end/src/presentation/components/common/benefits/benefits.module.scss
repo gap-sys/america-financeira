@@ -1,0 +1,99 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  @include container(1280px, 5.2rem auto 5rem auto);
+  padding: 0 2rem;
+  @media (max-width: 880px) {
+    flex-direction: column;
+    margin: 0.075rem auto 2.5rem auto;
+  }
+  @media (min-width: 880px) and (max-width: 1280px) {
+    font-size: $font-small;
+  }
+  .text-section {
+    margin-bottom: 2rem;
+    .title {
+      font-size: $font-large;
+      font-weight: $weight-medium;
+      line-height: 2.5rem;
+      margin-bottom: 1rem;
+      @media (max-width: 880px) {
+        font-size: 1.8rem;
+        line-height: 2rem;
+      }
+      @media (min-width: 881px) and (max-width: 1280px) {
+        font-size: $font-large;
+        line-height: 2.4rem;
+      }
+    }
+    .subtitle {
+      color: $color-grayMedium;
+      font-size: $font-default;
+      font-weight: $weight-default;
+      line-height: 1.4rem;
+      padding-right: 4rem;
+      @media (max-width: 880px) {
+        font-size: $font-small;
+        line-height: 1.2rem;
+      }
+      @media (min-width: 880px) and (max-width: 1280px) {
+        font-size: $font-small;
+        line-height: 1.3rem;
+      }
+    }
+  }
+  .details-section {
+    @include display-flex(flex-start, space-between);
+    width: 100%;
+    @media (max-width: 880px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+    .box {
+      @include display-flex(center, space-between);
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 2rem;
+      padding: 0 1.5rem;
+      @media (max-width: 880px) {
+        flex-direction: none;
+      }
+      .image-section {
+        width: 205px;
+        height: 100%;
+        @media (max-width: 624px) {
+          width: 100%;
+        }
+        @media (min-width: 625px) and (max-width: 880px) {
+          width: 13.75rem;
+        }
+        @media (min-width: 880px) and (max-width: 1280px) {
+          width: 11.25rem;
+        }
+      }
+      .info-section {
+        .title {
+          font-size: $font-default;
+          font-weight: $weight-medium;
+          margin-bottom: 0.3rem;
+          @media (min-width: 880px) and (max-width: 1280px) {
+            font-size: $font-default;
+          }
+        }
+        .subtitle {
+          text-align: center;
+          color: $color-grayMedium;
+          font-size: $font-default;
+          line-height: 1.4rem;
+          @media (min-width: 880px) and (max-width: 1280px) {
+            font-size: $font-small;
+            line-height: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

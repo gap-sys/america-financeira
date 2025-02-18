@@ -1,0 +1,72 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  .box-section {
+    @include display-flex;
+    background-color: $color-secondary;
+    .text-section {
+      width: 100%;
+      @media (max-width: 1024px) {
+        padding: 1.5rem 2rem;
+        width: 100%;
+      }
+      .title {
+        font-size: $font-medium;
+        font-weight: $weight-medium;
+        line-height: 2rem;
+        padding: 0 9rem;
+        @media (min-width: 1025px) and (max-width: 1224px) {
+          padding: 0 5rem;
+        }
+        @media (max-width: 1024px) {
+          font-size: $font-default;
+          padding: 0;
+        }
+      }
+      .subtitle {
+        font-size: $font-small;
+        font-weight: $weight-medium;
+        margin: 0.6rem 0 1rem 0;
+        line-height: 1.2rem;
+        padding: 0 9rem;
+        @media (min-width: 1025px) and (max-width: 1224px) {
+          padding: 0 5rem;
+        }
+        @media (max-width: 1024px) {
+          font-size: $font-small;
+          line-height: 1rem;
+          padding: 0;
+        }
+      }
+      .link-section {
+        @include display-flex(center, flex-start);
+        padding: 0 9rem;
+        @media (min-width: 1025px) and (max-width: 1224px) {
+          padding: 0 5rem;
+        }
+        @media (max-width: 1024px) {
+          padding: 0;
+        }
+        .icon {
+          color: $color-primary;
+          font-size: $font-small;
+          margin-left: 0.6rem;
+        }
+        .paragraph {
+          @include hover;
+          color: $color-primary;
+          font-size: $font-small;
+          font-weight: $weight-default;
+          border-bottom: 0.0625rem solid $color-primary;
+        }
+      }
+    }
+    .image-section {
+      width: 110%;
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+}

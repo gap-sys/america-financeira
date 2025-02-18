@@ -1,0 +1,36 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  @include container(1080px, 2rem auto 4rem auto);
+  padding: 0 2rem;
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: $font-medium;
+    font-weight: $weight-medium;
+    margin: 0.5rem 0;
+    @media (max-width: 1124px) {
+      font-size: $font-default;
+      line-height: 1.5rem;
+    }
+  }
+  .overview {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  .list-section {
+    padding-left: 2.5rem;
+    .items {
+      list-style: disc;
+      font-weight: $weight-default;
+      margin-bottom: 0.5rem;
+      text-indent: 0.5rem;
+    }
+  }
+}

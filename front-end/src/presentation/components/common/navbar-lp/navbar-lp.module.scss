@@ -1,0 +1,90 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  background-color: $color-primary;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0.06rem 0.25rem;
+  position: absolute;
+  margin: 0 auto;
+  font-weight: $weight-default;
+  padding: 1.2rem 0;
+  height: 5.6rem;
+  z-index: 999;
+  width: 100%;
+  .navbar {
+    @include container;
+    @include display-flex(center, space-between);
+    padding: 0 2rem;
+    .logo {
+      width: 200px;
+      height: 50px;
+    }
+    .left-section {
+      @include display-flex(center, flex-start);
+      gap: 1.5rem;
+      .nav-items {
+        display: none;
+        @media (min-width: 1184px) {
+          @include display-flex(center, flex-start);
+
+          .nav-link {
+            @include hover;
+            position: relative;
+            padding: 1rem 1rem;
+            .link-text {
+              @include display-flex(center, flex-start);
+              @include hover;
+              font-size: 16px;
+              line-height: 20px;
+              font-family: 'Inter', 'sans-serif';
+              font-weight: 700;
+              border-bottom: 0.0625rem solid $color-primary;
+              gap: 0.4rem;
+              &:hover {
+                color: $color-yellow !important;
+              }
+              .rotate-180 {
+                @include hover(all 0.3s ease);
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+    .button-section {
+      @include display-flex;
+      @include hover;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 700;
+      border-radius: 5px;
+      padding: 0.8rem 1.4rem;
+      font-family: 'Inter', sans-serif;
+      background-color: $color-success;
+      color: $color-snow;
+      .link {
+        color: inherit;
+      }
+      @media (max-width: 1184px) {
+        display: none;
+      }
+      .icon {
+        font-size: 1.75rem;
+        margin-left: 0.5rem;
+      }
+      @media (min-width: 1184px) {
+        display: flex;
+      }
+    }
+    .menu-icon {
+      @include hover;
+      display: block;
+      font-size: $font-medium;
+      color: $color-snow;
+      @media (min-width: 1184px) {
+        display: none;
+      }
+    }
+  }
+}

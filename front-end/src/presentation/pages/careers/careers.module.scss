@@ -1,0 +1,265 @@
+@import '../../styles/themes/light.scss';
+@import '../../styles/themes/mixins.scss';
+
+.about-container {
+  background-color: $color-secondary;
+  .about-section {
+    @include container(80rem, 72px auto 56px auto);
+    @include display-flex;
+    padding: 64px 32px;
+    @media (max-width: 880px) {
+      flex-direction: column;
+    }
+    .image-section {
+      width: 100%;
+      padding-right: 64px;
+      @media (max-width: 880px) {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 1rem;
+      }
+      .img {
+        border-radius: $radii-large;
+      }
+    }
+    .text-section {
+      width: 100%;
+      .subtitle {
+        font-weight: $weight-medium;
+        font-size: $font-default;
+        margin-bottom: 8px;
+        @media (max-width: 55rem) {
+          font-size: $font-default;
+          font-weight: $weight-medium;
+        }
+      }
+      .title {
+        font-weight: $weight-medium;
+        font-size: $font-large;
+        margin: 0 0 16px 0;
+        line-height: 46.4px;
+        @media (max-width: 55rem) {
+          font-size: $font-medium;
+          line-height: 32px;
+        }
+      }
+      .paragraph {
+        font-weight: $weight-default;
+        font-size: $font-small;
+        margin-bottom: 32px;
+        line-height: 20.8px;
+      }
+      .text-team {
+        @include display-flex(flex-start, flex-start);
+        color: $color-darkHigh;
+        .text {
+          border-bottom: 0.0625rem solid $color-darkHigh;
+          margin-right: 4.8px;
+        }
+        .icon {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.benefits-container {
+  background-color: $color-secondary;
+  .benefits-section {
+    @include container(1280px, 4.5rem auto 3.5rem auto);
+    padding: 4rem 2rem 6rem 2rem;
+    .text-section {
+      text-align: center;
+      .subtitle {
+        color: $color-primary;
+        font-weight: $weight-medium;
+        font-size: 1.1rem;
+        margin-bottom: 4.8px;
+        @media (max-width: 55rem) {
+          font-size: $font-default;
+          font-weight: $weight-medium;
+        }
+      }
+      .title {
+        font-weight: $weight-bold;
+        font-size: 38.4px;
+        margin: 0 0 1.5rem 0;
+        line-height: 40px;
+        @media (max-width: 55rem) {
+          font-size: $font-medium;
+          line-height: 32px;
+        }
+      }
+    }
+    .benefits-box {
+      @include display-flex;
+      gap: 32px;
+      @media (max-width: 1180px) {
+        flex-wrap: wrap;
+      }
+      .box {
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        margin-top: 16px;
+        padding: 12px 20px;
+        background-color: $color-snow;
+        border-radius: $radii-small;
+        width: 280px;
+        height: 12.5rem;
+        .title {
+          font-size: $font-default;
+          line-height: 1.3rem;
+          margin-top: 0.175rem;
+          font-weight: $weight-default;
+        }
+        .description {
+          margin-top: 2rem;
+          font-weight: $weight-default;
+          font-size: $font-default;
+        }
+      }
+    }
+  }
+}
+.form-container {
+  @include display-flex(flex-start, center);
+  padding: 0 2rem;
+  @media (max-width: 880px) {
+    @include display-flex(flex-start, center);
+    flex-direction: column;
+  }
+  .text-section {
+    .subtitle {
+      font-weight: $weight-medium;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      @media (max-width: 55rem) {
+        font-size: $font-small;
+        font-weight: $weight-medium;
+      }
+    }
+    .title {
+      font-weight: $weight-medium;
+      font-size: 2.4rem;
+      margin: 0 0 16px 0;
+      line-height: 43.4px;
+      @media (max-width: 55rem) {
+        font-size: $font-medium;
+        line-height: 32px;
+      }
+    }
+    .paragraph {
+      font-weight: $weight-default;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      line-height: 20.8px;
+      @media (max-width: 55rem) {
+        font-size: $font-small;
+      }
+    }
+    .image-section {
+      display: flex;
+      margin-bottom: 2rem;
+      .img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .form {
+    margin-left: 4rem;
+    @include display-flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 16.24px 0;
+    border: 0.0625rem solid $color-primary;
+    background-color: $color-snow;
+    border-radius: $radii-default;
+    width: 650px;
+    padding: 33.2px 41.2px;
+    margin-bottom: 5rem;
+    @media (max-width: 55rem) {
+      width: 100%;
+      margin-left: 0;
+      padding: 32px 40px;
+    }
+    .box-title {
+      @include display-flex(flex-start, flex-start);
+      flex-direction: column;
+      gap: 32px;
+      @media (max-width: 55rem) {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .text-america {
+        font-weight: $weight-default;
+        margin-bottom: 3.2px;
+      }
+      .title {
+        color: $color-darkHigh;
+        font-size: $font-medium;
+        font-weight: $weight-bold;
+        line-height: 30.4px;
+        margin-bottom: 6.4px;
+        @media (max-width: 62.125rem) {
+          font-size: $font-default;
+        }
+      }
+      .subtitle {
+        font-weight: $weight-default;
+      }
+    }
+
+    .input-text {
+      border-bottom: 1px solid $color-grayMedium;
+      transition: border-bottom 0.3s ease;
+      color: $color-darkHigh;
+      font-size: $font-default;
+      font-weight: $weight-default;
+      margin-top: 19.2px;
+      outline: none;
+      padding: 7px 0;
+      width: 100%;
+      @media (max-width: 55rem) {
+        font-size: $font-small;
+      }
+      &:focus {
+        border-bottom: 161pxx solid $color-darkHigh;
+      }
+    }
+    .terms-box {
+      @include display-flex(center, flex-start);
+      .checkbox {
+        border: 2px solid $color-darkHigh;
+        margin: 24px 0;
+        width: 19.2px;
+        height: 19.2px;
+        border-radius: $radii-small;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .label-checkbox {
+        position: relative;
+        user-select: none;
+        color: $color-darkHigh;
+        font-weight: $weight-bold;
+        font-size: $font-small;
+        padding-left: 8px;
+      }
+    }
+    .error {
+      color: $color-error;
+      font-weight: $weight-default;
+      font-size: $font-small;
+    }
+    .checkbox-error + .label-checkbox {
+      color: $color-error;
+    }
+    .input-text-error {
+      border-color: $color-error;
+      &:focus {
+        border-color: $color-error;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  background-color: $color-secondary;
+  .box-section {
+    @include container(1024px, 0 auto);
+    padding: 3rem 2rem 4rem 2rem;
+    .title-section {
+      margin-bottom: 1.7rem;
+      .subtitle {
+        color: $color-darkHigh;
+        font-size: $font-default;
+        font-weight: $weight-medium;
+        margin-bottom: 0.2rem;
+      }
+      .title {
+        color: $color-primary;
+        font-size: $font-large;
+        font-weight: $weight-medium;
+        line-height: 2.6rem;
+        margin-bottom: 0.4rem;
+        @media (max-width: 780px) {
+          font-size: 1.8rem;
+          line-height: 2rem;
+        }
+      }
+    }
+    .about-section {
+      @include display-flex(flex-start, space-between);
+      @media (max-width: 780px) {
+        flex-direction: column;
+      }
+      .image-section {
+        width: 60%;
+        @media (max-width: 780px) {
+          width: 100%;
+        }
+        .img {
+          border-radius: $radii-large;
+          width: 95%;
+          height: 490px;
+        }
+      }
+      .text-section {
+        padding: 0.2rem 2rem;
+        width: 100%;
+        @media (max-width: 780px) {
+          width: 100%;
+          padding: 0.2rem 0;
+          margin-top: 1rem;
+        }
+        .title {
+          text-transform: capitalize;
+          font-size: $font-default;
+          font-weight: $weight-medium;
+          margin-bottom: 0.2rem;
+          @media (max-width: 880px) {
+            font-size: $font-default;
+          }
+        }
+        .subtitle {
+          font-size: $font-default;
+          font-weight: $weight-medium;
+          margin-bottom: 0.9rem;
+          @media (max-width: 880px) {
+            font-size: $font-small;
+          }
+        }
+        .paragraph {
+          color: $color-primary;
+          font-weight: $weight-medium;
+          font-size: $font-small;
+          margin-bottom: 1rem;
+          line-height: 1.3rem;
+          @media (max-width: 880px) {
+            font-size: $font-small;
+          }
+        }
+      }
+    }
+  }
+}

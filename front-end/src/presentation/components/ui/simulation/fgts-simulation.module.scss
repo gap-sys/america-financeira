@@ -1,0 +1,124 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  font-family: 'Inter', sans-serif;
+  .fgts-simulation {
+    @include container;
+    @include display-flex(center, flex-start);
+    padding: 3rem 2rem 2rem 2rem;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+    .text-section {
+      @include display-flex(center, flex-start);
+      width: 100%;
+      gap: 10px;
+      @media (min-width: 625px) and (max-width: 992px) {
+        @include display-flex(center, center);
+        margin-bottom: 2rem;
+      }
+      @media (max-width: 624px) {
+        @include display-flex(flex-start, center);
+        margin-bottom: 2rem;
+      }
+      .text {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+        color: $color-snow;
+        padding: 0 1.5rem;
+        @media (max-width: 824px) {
+          padding: 0 0rem;
+        }
+      }
+      .icon {
+        border: 1px solid $color-yellow;
+        color: $color-snow;
+        border-radius: 50%;
+        padding: 1rem;
+        font-size: 24px;
+        @media (max-width: 624px) {
+          display: none;
+        }
+      }
+    }
+
+    .simulation-section {
+      @include display-flex;
+      width: 80%;
+      gap: 10px;
+      @media (max-width: 824px) {
+        @include display-flex(flex-start, center);
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      .input-wrapper {
+        @include display-flex;
+        border-bottom: 1px solid $color-yellow;
+        padding: 5px 0 10px 0;
+        flex-grow: 1;
+        font-family: 'Inter', sans-serif;
+        .currency {
+          color: $color-yellow;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 600;
+          margin-right: 20px;
+          @media (max-width: 992px) {
+            font-size: 24px;
+          }
+        }
+        .input {
+          @include hover;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          font-family: 'Inter', sans-serif;
+          color: $color-snow;
+          width: 100%;
+          @media (max-width: 992px) {
+            font-size: 18px;
+          }
+          &::placeholder {
+            color: $color-grayMedium;
+          }
+        }
+        .button {
+          @include display-flex;
+          font-family: 'Inter', sans-serif;
+          gap: 7.5px;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 600;
+          color: $color-yellow;
+          cursor: pointer;
+          @media (max-width: 825px) {
+            display: none;
+          }
+        }
+      }
+    }
+    .button-phone {
+      @include display-flex;
+      background-color: $color-yellow;
+      color: $color-snow;
+      font-size: 24px;
+      line-height: 20px;
+      font-weight: 600;
+      padding: 1rem 0;
+      border-radius: $radii-small;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      @media (min-width: 825px) {
+        display: none;
+      }
+      .icon {
+        margin-left: 0.4rem;
+        margin-top: 0.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: left center;
+  color: $color-snow;
+  max-width: 100%;
+  height: 100vh;
+  z-index: 2;
+  @media (min-width: 625px) and (max-width: 994px) {
+    height: 130vh;
+  }
+  @media (max-width: 624px) {
+    height: 145vh;
+  }
+  .box-section {
+    @include display-flex(center, space-between);
+    @include container(1380px);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 0 2rem;
+    width: 100vw;
+    left: 50%;
+    top: 50%;
+    @media (min-width: 625px) and (max-width: 994px) {
+      @include display-flex(center, flex-start);
+      flex-direction: column;
+      margin-top: 9.8rem;
+    }
+    @media (max-width: 624px) {
+      @include display-flex(center, flex-start);
+      flex-direction: column;
+      margin-top: 14.5rem;
+    }
+    .text-section {
+      gap: 8px;
+      .subtitle {
+        font-weight: $weight-default;
+        font-size: $font-default;
+        margin-bottom: 1.5rem;
+        @media (min-width: 625px) and (max-width: 994px) {
+          font-size: $font-small;
+        }
+        @media (max-width: 624px) {
+          font-size: $font-small;
+          margin-bottom: 1rem;
+        }
+      }
+      .title {
+        font-size: $font-large;
+        font-weight: $weight-bold;
+        line-height: 2.9rem;
+        margin-bottom: 2rem;
+        @media (min-width: 625px) and (max-width: 994px) {
+          font-size: $font-large;
+          line-height: 3rem;
+        }
+        @media (max-width: 624px) {
+          font-size: $font-medium;
+          line-height: 2.2rem;
+          margin-bottom: 1rem;
+        }
+      }
+      .paragraph {
+        font-weight: $weight-light;
+        font-size: $font-small;
+        margin-top: 1.5rem;
+        @media (max-width: 994px) {
+          font-size: $font-small;
+        }
+      }
+      .paragraph-details {
+        font-size: $font-default;
+        font-weight: $weight-default;
+        line-height: 1.4rem;
+        margin-bottom: 2rem;
+      }
+    }
+    .form-section {
+      background-color: $color-snow;
+      border-radius: $radii-default;
+      padding: 1.2rem;
+      margin-top: 5.8rem;
+      width: 25rem;
+      @media (min-width: 625px) and (max-width: 994px) {
+        margin-top: 2.3rem;
+        padding: 1.2rem 0.8rem;
+        width: 23.75rem;
+      }
+      @media (max-width: 624px) {
+        margin-top: 2.3rem;
+        padding: 1.2rem 0.8rem;
+        width: 19rem;
+      }
+    }
+  }
+}

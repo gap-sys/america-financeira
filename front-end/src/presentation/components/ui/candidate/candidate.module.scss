@@ -1,0 +1,51 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.container {
+  @include container(1280px, 4.5rem auto 3.5rem auto);
+  @include display-flex;
+  padding: 0 2rem;
+  gap: 2rem;
+  @media (max-width: 880px) {
+    flex-direction: column;
+    margin: 3rem auto;
+    gap: 1rem;
+  }
+  .image-section {
+    width: 100%;
+    @media (min-width: 881px) and (max-width: 1125px) {
+      display: none;
+    }
+    .img {
+      border-radius: $radii-large;
+    }
+  }
+  .text-section {
+    width: 100%;
+    .subtitle {
+      font-weight: $weight-medium;
+      font-size: $font-default;
+      margin-bottom: 0.5rem;
+      @media (max-width: 880px) {
+        font-size: $font-default;
+        font-weight: $weight-medium;
+      }
+    }
+    .title {
+      font-weight: $weight-medium;
+      font-size: $font-large;
+      margin: 0 0 1rem 0;
+      line-height: 2.9rem;
+      @media (max-width: 880px) {
+        font-size: $font-medium;
+        line-height: 2rem;
+      }
+    }
+    .paragraph {
+      font-weight: $weight-default;
+      font-size: $font-small;
+      margin-bottom: 2rem;
+      line-height: 1.3rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../styles/themes/light.scss';
+@import '../../styles/themes/mixins.scss';
+
+.header {
+  background-color: $color-secondary;
+  .box {
+    @include container(1080px);
+    padding: 8.5rem 2rem 3.5rem 2rem;
+    .title {
+      font-size: $font-large;
+      font-weight: $weight-medium;
+      line-height: 2.8rem;
+      @media (max-width: 1124px) {
+        font-size: $font-medium;
+        line-height: 2rem;
+      }
+    }
+  }
+}

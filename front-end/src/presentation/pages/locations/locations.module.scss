@@ -1,0 +1,58 @@
+@import '../../styles/themes/light.scss';
+@import '../../styles/themes/mixins.scss';
+
+.locations-container {
+  @include container(1280px, 0 auto);
+  padding: 8rem 2rem 6rem 2rem;
+  .title-section {
+    display: inline;
+    font-size: 2rem;
+    font-weight: $weight-default;
+    border-bottom: 4px solid $color-secondary;
+    margin-bottom: 3.5rem;
+  }
+  .locations-box {
+    @include display-flex(center, flex-start);
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    @media (max-width: 780px) {
+    }
+    .box {
+      border: 0.35vmin solid $color-secondary;
+      box-shadow: 0.4rem 0.4rem $color-primary;
+      padding: 1.4rem 2rem;
+      margin-bottom: 1.5rem;
+      width: 270px;
+      border-radius: $radii-default;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @media (max-width: 780px) {
+        width: 100%;
+        margin: 2rem 0 0rem 0;
+        gap: 0rem;
+      }
+      @media (max-width: 980px) and (min-width: 781px) {
+        width: 200px;
+      }
+      .title-box {
+        margin: 0.7rem 0 0.3rem 0;
+        font-size: $font-default;
+        line-height: 1.375rem;
+        text-transform: uppercase;
+      }
+      .paragraph {
+        font-size: $font-default;
+      }
+      .icons-section {
+        padding-top: 0.5rem;
+        .icon {
+          color: inherit;
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
+}

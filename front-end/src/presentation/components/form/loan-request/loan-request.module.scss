@@ -1,0 +1,69 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.form {
+  @include display-flex;
+  flex-direction: column;
+  .title {
+    color: $color-darkHigh;
+    font-size: $font-medium;
+    font-weight: $weight-bold;
+    line-height: 2.2rem;
+    @media (max-width: 994px) {
+      font-size: $font-default;
+    }
+  }
+  .input-text {
+    font-family: inherit;
+    outline: none;
+    transition: border-bottom 0.3s ease;
+    border-bottom: 1px solid $color-grayMedium;
+    color: $color-darkHigh;
+    font-size: $font-default;
+    font-weight: $weight-medium;
+    margin-top: 1.2rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    @media (max-width: 994px) {
+      font-size: $font-small;
+    }
+    &:focus {
+      border-bottom: 0.0625rem solid $color-darkHigh;
+    }
+  }
+  .terms-box {
+    @include display-flex(center, flex-start);
+    .checkbox {
+      border: 0.125rem solid $color-darkHigh;
+      border-radius: $radii-small;
+      margin: 1.5rem 0;
+      width: 1.2rem;
+      height: 1.2rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .label-checkbox {
+      position: relative;
+      user-select: none;
+      color: $color-darkHigh;
+      font-weight: $weight-bold;
+      font-size: $font-small;
+      padding-left: 0.5rem;
+    }
+  }
+  .error {
+    color: $color-error;
+    font-weight: $weight-default;
+    font-size: $font-small;
+  }
+  .checkbox-error + .label-checkbox {
+    color: $color-error;
+  }
+  .input-text-error {
+    border-color: $color-error;
+    &:focus {
+      border-color: $color-error;
+    }
+  }
+}

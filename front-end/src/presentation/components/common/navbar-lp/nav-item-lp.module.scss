@@ -1,0 +1,26 @@
+@import '../../../styles/themes/light.scss';
+@import '../../../styles/themes/mixins.scss';
+
+.single-nav-item {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  .item-label {
+    @include display-flex(center, none);
+    @include hover;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    &:hover {
+      color: $color-yellow;
+    }
+    color: $color-darkHigh;
+    .arrow-icon {
+      transition: transform 0.2s ease;
+      font-size: $font-small;
+      &.rotate-180 {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
