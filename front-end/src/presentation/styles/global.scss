@@ -80,3 +80,14 @@ p {
   padding: 0;
   margin: 0;
 }
+
+// CSS (fgts.module.scss ou global.css)
+img {
+  width: 100%;
+  height: auto; // ✅ Altura proporcional para evitar cortes
+  object-fit: cover; // ✅ Cobre o espaço do container sem distorcer
+
+  @media (max-width: 624px) {
+    object-fit: contain; // ✅ Em telas menores, a imagem se ajusta sem cortar
+  }
+}

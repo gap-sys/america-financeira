@@ -2,7 +2,6 @@
 @import '../../../styles/themes/mixins.scss';
 
 .container {
-  padding: 0 2rem;
   background-size: cover;
   background-position: left center;
   color: $color-snow;
@@ -11,123 +10,135 @@
   overflow-x: hidden;
   z-index: 2;
   margin-left: 90px;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 80%),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0) 60%),
-      linear-gradient(90deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
-  }
   @media (max-width: 624px) {
-    padding: 0 0 !important;
-    background-size: auto;
-    background-position: left left;
-    margin-left: 0px;
-    margin-left: 90px;
-  }
-  .box-section {
-    @include display-flex(center, space-between);
-    @include container(1280px);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    padding: 0 2rem;
-    width: 100vw;
-    left: 50%;
-    top: 50%;
+    background-position: center top;
+
+    @media (max-width: 1024px) {
+      background-position: center top;
+      background-size: contain; 
+
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 80%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0) 60%),
+        linear-gradient(90deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
+    }
     @media (max-width: 624px) {
-      padding: 0 0rem !important;
+      padding: 0 0 !important;
+      background-size: auto;
+      background-position: left left;
+      margin-left: 0px;
+      margin-left: 90px;
     }
-    @media (max-width: 1280px) {
-      @include display-flex(center, flex-start);
-      flex-direction: column;
-      margin-top: 2.5rem;
-    }
-    .text-section {
-      gap: 8px;
-      .subtitle {
-        color: $color-yellow;
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-        font-family: 'Inter', sans-serif;
-        @media (min-width: 625px) and (max-width: 994px) {
-          font-size: $font-small;
-        }
-        @media (max-width: 624px) {
+    .box-section {
+      @include display-flex(center, space-between);
+      @include container(1280px);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 100vw;
+      left: 50%;
+      top: 50%;
+
+      @media (max-width: 724px) {
+        padding: 0 1rem !important;
+        left: 50%;
+        top: 50%;
+      }
+      @media (max-width: 1280px) {
+        @include display-flex(center, flex-start);
+        flex-direction: column;
+        margin-top: 2.5rem;
+      }
+      .text-section {
+        gap: 8px;
+
+        .subtitle {
+          color: $color-yellow;
           font-size: 16px;
-          margin-bottom: 1rem;
+          line-height: 20px;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          font-family: 'Inter', sans-serif;
+          @media (min-width: 625px) and (max-width: 994px) {
+            font-size: $font-small;
+          }
+          @media (max-width: 624px) {
+            font-size: 16px;
+            margin-bottom: 1rem;
+          }
         }
-      }
-      .title {
-        font-size: 56px;
-        line-height: 64px;
-        font-weight: 600;
-        margin-bottom: 0.2rem;
-        font-family: 'Inter', sans-serif;
-        @media (min-width: 625px) and (max-width: 994px) {
-          font-size: $font-large;
-          line-height: 3rem;
+        .title {
+          font-size: 56px;
+          line-height: 64px;
+          font-weight: 600;
+          margin-bottom: 0.2rem;
+          font-family: 'Inter', sans-serif;
+          @media (min-width: 625px) and (max-width: 994px) {
+            font-size: $font-large !important;
+            line-height: 3rem;
+          }
+          @media (max-width: 624px) {
+            font-size: 42px;
+            line-height: 56px;
+            margin-bottom: 1rem;
+          }
         }
-        @media (max-width: 624px) {
-          font-size: 40px;
-          line-height: 56px;
-          margin-bottom: 1rem;
-        }
-      }
-      .paragraph {
-        font-weight: 400;
-        line-height: 24px;
-        font-size: 16px;
-        font-family: 'Inter', sans-serif;
-        margin: 0.5rem 0 2rem 0;
-        @media (max-width: 994px) {
+        .paragraph {
+          font-weight: 400;
+          line-height: 24px;
           font-size: 16px;
+          font-family: 'Inter', sans-serif;
+          margin: 0.5rem 0 2rem 0;
+          @media (max-width: 994px) {
+            font-size: 18px;
+          }
         }
-      }
-      .paragraph-details {
-        font-size: $font-default;
-        font-weight: $weight-default;
-        line-height: 1.4rem;
-        margin-bottom: 2rem;
-      }
-      .button-section {
-        @include display-flex;
-        @include hover;
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: 700;
-        border-radius: 5px;
-        width: 200px;
-        padding: 0.8rem 1.4rem;
-        font-family: 'Inter', sans-serif;
-        background-color: $color-success;
-        @media (max-width: 684px) {
-          width: 100%;
+        .paragraph-details {
+          font-size: $font-default;
+          font-weight: $weight-default;
+          line-height: 1.4rem;
+          margin-bottom: 2rem;
         }
-        .link {
-          color: inherit;
+        .button-section {
+          @include display-flex;
+          @include hover;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 700;
+          border-radius: 5px;
+          width: 200px;
+          padding: 0.8rem 1.4rem;
+          font-family: 'Inter', sans-serif;
+          background-color: $color-success;
+          @media (max-width: 684px) {
+            width: 100%;
+          }
+          .link {
+            color: inherit;
+          }
+          .icon {
+            font-size: 1.75rem;
+            margin-left: 0.75rem;
+          }
+          @media (min-width: 1024px) {
+            display: flex;
+          }
         }
-        .icon {
-          font-size: 1.75rem;
-          margin-left: 0.75rem;
-        }
-        @media (min-width: 1024px) {
-          display: flex;
-        }
-      }
-      .menu-icon {
-        @include hover;
-        display: block;
-        font-size: $font-medium;
-        @media (min-width: 1024px) {
-          display: none;
+        .menu-icon {
+          @include hover;
+          display: block;
+          font-size: $font-medium;
+          @media (min-width: 1024px) {
+            display: none;
+          }
         }
       }
     }

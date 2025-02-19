@@ -15,6 +15,7 @@ import { IconCheck, IconWallet, IconClock, IconUsers, IconBuildingStore, IconMed
 
 import S from './fgts.module.scss'
 import Link from 'next/link'
+import { useState, useEffect } from 'react' // ✅ Importando hooks
 
 const differentials = [
   {
@@ -91,7 +92,25 @@ const companyStats = [
 ]
 
 const Fgts = () => {
-  const IMAGES = IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO
+  const [title, setTitle] = useState('Crédito através \n da antecipação \n do seu FGTS')
+  const [image, setImage] = useState(IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO.src)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 624) {
+        setTitle('Crédito antecipado do \n seu FGTS')
+        setImage(IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO.src) 
+      } else {
+        setTitle('Crédito através \n da antecipação \n do seu FGTS')
+        setImage(IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO.src)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <div className={S.container}>
@@ -104,12 +123,13 @@ const Fgts = () => {
       <NavbarLP />
 
       <HeaderLP
-        subtitle={`Conte conosco`}
-        title={`Crédito através \n da antecipação \n do seu FGTS`}
+        subtitle={`Conte com a América`}
+        title={title}
         paragraph={`Você sabia que pode antecipar até \n 10 anos do seu Saque Aniversário FGTS?`}
-        image={IMAGES.src}
+        image={image}
       />
-      {/* <FgtsSimulation backgroundColor="#000040" color="#fff" /> */}
+
+      <FgtsSimulation backgroundColor="#000000" color="#fff" />
 
       <section id="vantagens" className={S['section-differentials']}>
         <h1 className={S['subtitle']}>Nossos diferenciais</h1>
