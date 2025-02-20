@@ -113,19 +113,16 @@ const Fgts = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-const FaleConoscoNav = () => {
+const FaleConoscoNav: React.FC = () => {
   const handleClick = () => {
-    window.open(
-      'https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS',
-      '_blank'
-    );
+    window.open('https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS', '_blank');
   };
 
   return (
-    <div className={S['button-section']} onClick={handleClick}>
+    <button onClick={handleClick} type="button" className={S.button}>
       <span>Fale Conosco</span>
       <ICON.IconBrandWhatsapp className={S.icon} />
-    </div>
+    </button>
   );
 };
 
