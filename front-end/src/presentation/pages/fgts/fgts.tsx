@@ -17,6 +17,7 @@ import S from './fgts.module.scss'
 import Link from 'next/link'
 import { useState, useEffect } from 'react' // ✅ Importando hooks
 
+
 const differentials = [
   {
     title: 'Aprovado',
@@ -112,6 +113,35 @@ const Fgts = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+const FaleConoscoNav = () => {
+  useEffect(() => {
+    const handleClick = () => {
+      window.open(
+        'https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS',
+        '_blank'
+      );
+    };
+
+    const buttonSection = document.querySelector(`.${S['button-section']}`);
+    if (buttonSection) {
+      buttonSection.addEventListener('click', handleClick);
+    }
+
+    return () => {
+      if (buttonSection) {
+        buttonSection.removeEventListener('click', handleClick);
+      }
+    };
+  }, []);
+
+  return (
+    <div className={S['button-section']}>
+      <span>Fale Conosco</span>
+      <ICON.IconBrandWhatsapp className={S.icon} />
+    </div>
+  );
+};
+
   return (
     <div className={S.container}>
       <Meta
@@ -168,19 +198,8 @@ const Fgts = () => {
             </div>
           ))}
         </div>
-        <div className={S['button-container']}>
-                <div
-            className={S['button-section']}
-            onClick={() =>
-              window.open(
-                'https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS',
-                '_blank'
-              )
-            }
-          >
-            <span>Fale Conosco</span>
-            <ICON.IconBrandWhatsapp className={S.icon} />
-          </div>
+        <div>
+         <FaleConoscoNav />
         </div>
       </section>
 
