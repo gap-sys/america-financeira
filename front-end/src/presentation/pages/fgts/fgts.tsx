@@ -169,17 +169,16 @@ const Fgts = () => {
           ))}
         </div>
         <div className={S['button-container']}>
-          <div className={S['button-section']}>
-            <Link
-              href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS"
-              target="_blank"
-              rel="noopener noreferrer"
-              legacyBehavior
-            >
-              <a className={S.link}>
-                <span>Fale Conosco</span>
-              </a>
-            </Link>
+                <div
+            className={S['button-section']}
+            onClick={() =>
+              window.open(
+                'https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS',
+                '_blank'
+              )
+            }
+          >
+            <span>Fale Conosco</span>
             <ICON.IconBrandWhatsapp className={S.icon} />
           </div>
         </div>
