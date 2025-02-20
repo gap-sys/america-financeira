@@ -26,6 +26,22 @@ const NavbarLP = () => {
     }
   }
 
+  const FaleConoscoNav = () => {
+    const handleClick = () => {
+      window.open(
+        'https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS',
+        '_blank'
+      )
+    }
+
+    return (
+      <div className={S['button-section']} onClick={handleClick}>
+        <span>Fale Conosco</span>
+        <ICON.IconBrandWhatsapp className={S.icon} />
+      </div>
+    )
+  }
+
   return (
     <nav className={S.container}>
       <div className={S.navbar}>
@@ -68,17 +84,8 @@ const NavbarLP = () => {
               </div>
             ))}
           </div>
-          <div
-            className={S['button-section']}
-            onClick={() =>
-              window.open(
-                'https://api.whatsapp.com/send?phone=5519988285625&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS',
-                '_blank'
-              )
-            }
-          >
-            <span>Fale Conosco</span>
-            <ICON.IconBrandWhatsapp className={S.icon} />
+          <div>
+            <FaleConoscoNav />
           </div>
         </section>
 

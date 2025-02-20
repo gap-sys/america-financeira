@@ -85,6 +85,7 @@
         @include display-flex;
         @include hover;
         display: block;
+        cursor: pointer;
         line-height: 20px;
         font-weight: 700;
         border-radius: 5px;
@@ -214,4 +215,9 @@
     transform: scale(1.8);
     opacity: 0;
   }
+}
+
+.button-section span,
+.button-section .icon {
+  pointer-events: none;
 }

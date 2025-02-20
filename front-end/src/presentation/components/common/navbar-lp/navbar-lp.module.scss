@@ -55,6 +55,7 @@
     .button-section {
       @include display-flex;
       @include hover;
+      cursor: pointer;
       font-size: 16px;
       line-height: 20px;
       font-weight: 700;
@@ -80,6 +81,11 @@
     
    .span-text {
     font-size: 24px;
+}
+
+.button-section span,
+.button-section .icon {
+  pointer-events: none;
 }
 
     .menu-icon {
