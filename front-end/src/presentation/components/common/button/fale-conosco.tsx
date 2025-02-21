@@ -11,7 +11,7 @@ const FaleConoscoNav: React.FC = () => {
     display: 'inline-flex',
     alignItems: 'center',
     padding: '10px 20px',
-    backgroundColor: '#25d366',
+    backgroundColor: '#0000CC',
     color: 'white',
     border: 'none',
     borderRadius: '5px',
@@ -34,7 +34,7 @@ const FaleConoscoNav: React.FC = () => {
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
     >
-      <span>Fale Conosco</span>
+      <span>Fale Conosco!!!</span>
       <ICON.IconBrandWhatsapp style={iconStyle} />
     </Button>
   );
