@@ -55,19 +55,21 @@ const FaqFGTS = () => {
             {activeIndex === index && <div className={S['faq-fgts__answer']}>{faq.answer}</div>}
           </div>
         ))}
-        <Link
-          href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
-          target="_blank"
-          rel="noopener noreferrer"
-          legacyBehavior
-        >
-          <div className={S['button-section']}>
-            <a className={S.link}>
-              <span>Fale Conosco</span>
-            </a>
-            <ICON.IconBrandWhatsapp className={S.icon} />
-          </div>
-        </Link>
+        <div className={S['button-container']}>
+          <Link
+            href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
+            target="_blank"
+            rel="noopener noreferrer"
+            legacyBehavior
+          >
+            <div className={S['button-section']}>
+              <a className={S.link}>
+                <span>Fale Conosco</span>
+              </a>
+              <ICON.IconBrandWhatsapp className={S.icon} />
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   )
