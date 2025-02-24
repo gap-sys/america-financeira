@@ -6,8 +6,6 @@ import { StaticImageData } from 'next/image'
 
 import S from './header-lp.module.scss'
 
-import  FaleConoscoNav from '../button/fale-conosco'
-
 type HeaderProps = {
   title: string
   subtitle: string
@@ -29,7 +27,19 @@ const HeaderLP = ({ title, subtitle, image, paragraph }: HeaderProps) => (
         <h6 className={S.subtitle}>{subtitle}</h6>
         <h1 className={S.title}>{title}</h1>
         {paragraph && <p className={S.paragraph}>{paragraph}</p>}
-       <FaleConoscoNav />
+        <div className={S['button-section']}>
+          <Link
+            href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
+            target="_blank"
+            rel="noopener noreferrer"
+            legacyBehavior
+          >
+            <a className={S.link}>
+              <span>Fale Conosco</span>
+            </a>
+          </Link>
+          <ICON.IconBrandWhatsapp className={S.icon} />
+        </div>
       </div>
     </div>
   </header>

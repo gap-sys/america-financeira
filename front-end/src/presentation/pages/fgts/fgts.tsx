@@ -15,9 +15,7 @@ import { IconCheck, IconWallet, IconClock, IconUsers, IconBuildingStore, IconMed
 
 import S from './fgts.module.scss'
 import Link from 'next/link'
-import { useState, useEffect } from 'react' // ✅ Importando hooks
-import  FaleConoscoNav from '../../components/common/button/fale-conosco'
-
+import { useState, useEffect } from 'react'
 
 const differentials = [
   {
@@ -101,7 +99,7 @@ const Fgts = () => {
     const handleResize = () => {
       if (window.innerWidth <= 624) {
         setTitle('Crédito antecipado do \n seu FGTS')
-        setImage(IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO.src) 
+        setImage(IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO.src)
       } else {
         setTitle('Crédito através \n da antecipação \n do seu FGTS')
         setImage(IMAGE.EMPRESTIMO_ADULTOS_CONVERSANDO.src)
@@ -170,8 +168,20 @@ const Fgts = () => {
             </div>
           ))}
         </div>
-        <div>
-         <FaleConoscoNav />
+        <div className={S['button-container']}>
+          <div className={S['button-section']}>
+            <Link
+              href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS"
+              target="_blank"
+              rel="noopener noreferrer"
+              legacyBehavior
+            >
+              <a className={S.link}>
+                <span>Fale Conosco</span>
+              </a>
+            </Link>
+            <ICON.IconBrandWhatsapp className={S.icon} />
+          </div>
         </div>
       </section>
 
