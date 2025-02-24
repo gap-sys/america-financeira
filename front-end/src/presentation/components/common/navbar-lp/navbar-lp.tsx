@@ -8,8 +8,7 @@ import { NavMobileLP } from 'src/presentation/components'
 import { IMAGE, ICON } from 'src/presentation/assets'
 import { getLinkAttributes } from 'src/utils'
 import { MENULP } from 'src/data/ui'
-import  FaleConoscoNav from '../button/fale-conosco'
-
+import FaleConoscoNav from '../button/fale-conosco'
 
 import S from './navbar-lp.module.scss'
 
@@ -70,9 +69,19 @@ const NavbarLP = () => {
               </div>
             ))}
           </div>
-          <div>
-            <FaleConoscoNav />
-          </div>
+          <Link
+            href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
+            target="_blank"
+            rel="noopener noreferrer"
+            legacyBehavior
+          >
+            <div className={S['button-section']}>
+              <a className={S.link}>
+                <span>Fale Conosco</span>
+              </a>
+              <ICON.IconBrandWhatsapp className={S.icon} />
+            </div>
+          </Link>
         </section>
 
         <ICON.IconMenu3 onClick={() => setSideMenu(true)} className={S['menu-icon']} />

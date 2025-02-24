@@ -33,19 +33,19 @@ const LoanProcess = () => {
             <li>Obter aprovação na simulação.</li>
           </ul>
           <h3 className={S['highlight']}>Dinheiro na conta!</h3>
-          <div className={S['button-section']}>
-            <Link
-              href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
-              target="_blank"
-              rel="noopener noreferrer"
-              legacyBehavior
-            >
+          <Link
+            href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
+            target="_blank"
+            rel="noopener noreferrer"
+            legacyBehavior
+          >
+            <div className={S['button-section']}>
               <a className={S.link}>
                 <span>Fale Conosco</span>
               </a>
-            </Link>
-            <ICON.IconBrandWhatsapp className={S.icon} />
-          </div>
+              <ICON.IconBrandWhatsapp className={S.icon} />
+            </div>
+          </Link>
         </div>
       </div>
     </div>
