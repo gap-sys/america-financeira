@@ -3,7 +3,6 @@ import S from './loan-process.module.scss'
 import Image from 'next/image'
 import { ICON, IMAGE } from 'src/presentation/assets'
 import Link from 'next/link'
-import  FaleConoscoNav from '../../common/button/fale-conosco'
 
 const LoanProcess = () => {
   return (
@@ -34,7 +33,19 @@ const LoanProcess = () => {
             <li>Obter aprovação na simulação.</li>
           </ul>
           <h3 className={S['highlight']}>Dinheiro na conta!</h3>
-          <FaleConoscoNav /> 
+          <div className={S['button-section']}>
+            <Link
+              href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS."
+              target="_blank"
+              rel="noopener noreferrer"
+              legacyBehavior
+            >
+              <a className={S.link}>
+                <span>Fale Conosco</span>
+              </a>
+            </Link>
+            <ICON.IconBrandWhatsapp className={S.icon} />
+          </div>
         </div>
       </div>
     </div>

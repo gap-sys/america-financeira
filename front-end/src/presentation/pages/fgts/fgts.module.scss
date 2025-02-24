@@ -85,7 +85,6 @@
         @include display-flex;
         @include hover;
         display: block;
-        cursor: pointer;
         line-height: 20px;
         font-weight: 700;
         border-radius: 5px;
@@ -215,32 +214,4 @@
     transform: scale(1.8);
     opacity: 0;
   }
-}
-
-.button-section span,
-.button-section .icon {
-  pointer-events: none;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #25d366;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: 'Inter', 'sans-serif';
-  font-weight: 700;
-}
-
-.button:hover {
-  background-color: #128c7e;
-}
-
-.icon {
-  margin-left: 10px;
-  font-size: 1.2em;
 }

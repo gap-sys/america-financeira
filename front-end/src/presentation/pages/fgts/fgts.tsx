@@ -15,7 +15,7 @@ import { IconCheck, IconWallet, IconClock, IconUsers, IconBuildingStore, IconMed
 
 import S from './fgts.module.scss'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react' // ✅ Importando hooks
 
 const differentials = [
   {

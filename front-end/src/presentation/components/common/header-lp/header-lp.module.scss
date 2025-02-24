@@ -2,143 +2,135 @@
 @import '../../../styles/themes/mixins.scss';
 
 .container {
+  padding: 0 2rem;
   background-size: cover;
   background-position: left center;
   color: $color-snow;
   max-width: 100%;
   height: 100vh;
-  overflow-x: hidden;
   z-index: 2;
-  margin-left: 90px;
   @media (max-width: 624px) {
-    background-position: center top;
-
-    @media (max-width: 1024px) {
-      background-position: center top;
-      background-size: contain; 
-
+    background-position: right center;
+    background-size: cover;
+    no-repeat: no-repeat;
+    height: 500px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 80%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0) 60%),
+      linear-gradient(90deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
+    @media (max-width: 624px) {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 5%, rgba(0, 0, 0, 0) 20%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 2%, rgba(0, 0, 0, 0) 15%);
     }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 80%),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0) 60%),
-        linear-gradient(90deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
+  }
+  .box-section {
+    @include display-flex(center, space-between);
+    @include container(1280px);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 0 2rem;
+    width: 100vw;
+    left: 50%;
+    top: 50%;
+    @media (min-width: 625px) and (max-width: 994px) {
+      @include display-flex(center, flex-start);
+      flex-direction: column;
     }
     @media (max-width: 624px) {
-      padding: 0 0 !important;
-      background-size: auto;
-      background-position: left left;
-      margin-left: 0px;
-      margin-left: 90px;
+      @include display-flex(center, flex-start);
+      flex-direction: column;
+      padding: 0 1rem !important;
+      top: 45%;
     }
-    .box-section {
-      @include display-flex(center, space-between);
-      @include container(1280px);
-      transform: translate(-50%, -50%);
-      position: absolute;
-      width: 100vw;
-      left: 50%;
-      top: 50%;
-
-      @media (max-width: 724px) {
-        padding: 0 1rem !important;
-        left: 50%;
-        top: 50%;
+    .text-section {
+      gap: 8px;
+      .subtitle {
+        color: $color-yellow;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        font-family: 'Inter', sans-serif;
+        @media (min-width: 625px) and (max-width: 994px) {
+          font-size: $font-small;
+        }
+        @media (max-width: 624px) {
+          font-size: 16px;
+          margin-bottom: 1rem;
+        }
       }
-      @media (max-width: 1280px) {
-        @include display-flex(center, flex-start);
-        flex-direction: column;
-        margin-top: 2.5rem;
+      .title {
+        font-size: 56px;
+        line-height: 64px;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        font-family: 'Inter', sans-serif;
+        @media (min-width: 625px) and (max-width: 994px) {
+          font-size: $font-large;
+          line-height: 3rem;
+        }
+        @media (max-width: 624px) {
+          font-size: 42px;
+          line-height: 56px;
+          margin-bottom: 1rem;
+        }
       }
-      .text-section {
-        gap: 8px;
-
-        .subtitle {
-          color: $color-yellow;
-          font-size: 16px;
-          line-height: 20px;
-          font-weight: 600;
-          margin-bottom: 0.5rem;
-          text-transform: uppercase;
-          font-family: 'Inter', sans-serif;
-          @media (min-width: 625px) and (max-width: 994px) {
-            font-size: $font-small;
-          }
-          @media (max-width: 624px) {
-            font-size: 16px;
-            margin-bottom: 1rem;
-          }
+      .paragraph {
+        font-weight: 400;
+        line-height: 24px;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        margin: 0.5rem 0 2rem 0;
+        @media (max-width: 994px) {
+          font-size: 18px;
         }
-        .title {
-          font-size: 56px;
-          line-height: 64px;
-          font-weight: 600;
-          margin-bottom: 0.2rem;
-          font-family: 'Inter', sans-serif;
-          @media (min-width: 625px) and (max-width: 994px) {
-            font-size: $font-large !important;
-            line-height: 3rem;
-          }
-          @media (max-width: 624px) {
-            font-size: 42px;
-            line-height: 56px;
-            margin-bottom: 1rem;
-          }
+      }
+      .paragraph-details {
+        font-size: $font-default;
+        font-weight: $weight-default;
+        line-height: 1.4rem;
+        margin-bottom: 2rem;
+      }
+      .button-section {
+        @include display-flex;
+        @include hover;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        border-radius: 5px;
+        width: 200px;
+        padding: 0.8rem 1.4rem;
+        font-family: 'Inter', sans-serif;
+        background-color: $color-success;
+        .link {
+          color: inherit;
         }
-        .paragraph {
-          font-weight: 400;
-          line-height: 24px;
-          font-size: 16px;
-          font-family: 'Inter', sans-serif;
-          margin: 0.5rem 0 2rem 0;
-          @media (max-width: 994px) {
-            font-size: 18px;
-          }
+        .icon {
+          font-size: 1.75rem;
+          margin-left: 0.75rem;
         }
-        .paragraph-details {
-          font-size: $font-default;
-          font-weight: $weight-default;
-          line-height: 1.4rem;
-          margin-bottom: 2rem;
+        @media (min-width: 1024px) {
+          display: flex;
         }
-        .button-section {
-          @include display-flex;
-          @include hover;
-          font-size: 16px;
-          line-height: 20px;
-          font-weight: 700;
-          border-radius: 5px;
-          width: 200px;
-          padding: 0.8rem 1.4rem;
-          font-family: 'Inter', sans-serif;
-          background-color: $color-success;
-          @media (max-width: 684px) {
-            width: 100%;
-          }
-          .link {
-            color: inherit;
-          }
-          .icon {
-            font-size: 1.75rem;
-            margin-left: 0.75rem;
-          }
-          @media (min-width: 1024px) {
-            display: flex;
-          }
+        @media (max-width: 724px) {
+          width: 100%;
         }
-        .menu-icon {
-          @include hover;
-          display: block;
-          font-size: $font-medium;
-          @media (min-width: 1024px) {
-            display: none;
-          }
+      }
+      .menu-icon {
+        @include hover;
+        display: block;
+        font-size: $font-medium;
+        @media (min-width: 1024px) {
+          display: none;
         }
       }
     }
