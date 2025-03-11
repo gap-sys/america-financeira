@@ -91,24 +91,23 @@ const About = () => (
           <IconTarget size={42} stroke={1.5} color="#007BFF" />
           <h1 className={S.title}>Missão</h1>
           <p className={S.subtitle}>
-            Oferecer soluções financeiras inovadoras, acessíveis e seguras, transformando a vida de nossos clientes e
-            parceiros.
+            Oferecer serviços financeiros com o melhor atendimento, proporcionando plena satisfação aos clientes e
+            colaboradores.
           </p>
         </div>
-          <div className={S['mission-card']}>
+        <div className={S['mission-card']}>
           <IconEye size={42} stroke={1.5} color="#28A745" />
           <h1 className={S.title}>Visão</h1>
           <p className={S.subtitle}>
-            Ser referência no mercado financeiro pela excelência no atendimento, confiança e tecnologia, promovendo o
-            crescimento sustentável.
+            Ser a melhor Instituição Financeira com o maior faturamento e rentabilidade do Brasil.
           </p>
         </div>
         <div className={S['mission-card']}>
           <IconHeartHandshake size={42} stroke={1.5} color="#FF5733" />
           <h1 className={S.title}>Valores</h1>
           <p className={S.subtitle}>
-            Ética, transparência, inovação, respeito ao cliente e compromisso com resultados de qualidade são nossos
-            pilares fundamentais.
+            Ética, Transparência, Profissionalismo, Qualidade, Inovação, Parceria e Respeito em todos os
+            relacionamentos, Meritocracia e Gratidão.
           </p>
         </div>
       </div>
