@@ -78,7 +78,27 @@ const Locations = () => (
       keywords="América Financeira, filiais, unidades, atendimento financeiro, Campinas, serviços financeiros, ramais, localização"
     />
     <div className={S['locations-container']}>
-      <h1 className={S['title-section']}>Nossas unidades</h1>
+      <h1 className={S['title-section']}> Unidades Licenciadas</h1>
+      <div className={S["aviso-legal"]}>
+        <h2>Aviso Legal sobre a Independência das Unidades</h2>
+        <p>
+          A América Financeira é uma marca licenciada para operação por unidades independentes, por meio de contrato de
+          uso de marca, firmado entre a licenciadora e cada unidade licenciada. Cada unidade opera com CNPJ próprio,
+          gestão administrativa autônoma e independência financeira, sendo exclusivamente responsável por seus atos,
+          compromissos e obrigações.
+        </p>
+        <p>
+          Dessa forma, a América Financeira (licenciadora da marca) não responde solidária ou subsidiariamente por
+          quaisquer obrigações ou responsabilidades de suas unidades licenciadas, incluindo, mas não se limitando a,
+          questões trabalhistas, consumeristas, cíveis, tributárias ou administrativas.
+        </p>
+        <p>
+          Quaisquer reclamações, litígios ou processos devem ser direcionados exclusivamente à unidade específica
+          responsável pelo atendimento, conforme seu CNPJ e contratos próprios.
+        </p>
+        <p>Para mais informações sobre cada unidade licenciada, consulte os dados abaixo.</p>
+      </div>
+
       <div className={S['locations-box']}>
         {LOCATIONS.map(({ name, ramal, whatsapp, maps }, key) => (
           <div className={S.box} key={key}>

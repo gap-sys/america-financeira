@@ -25,8 +25,8 @@ const MENU: MenuProps[] = [
       { label: 'Quem somos', link: '/quem-somos' },
       { label: 'Seja parceiro', link: '/seja-um-parceiro' },
       {
-        label: 'Nossas Unidades',
-        link: '/nossas-unidades',
+        label: 'Unidades Licenciadas',
+        link: '/unidades-licenciadas',
       },
       {
         label: 'Intranet',

@@ -15,9 +15,10 @@
     }
     .info-section {
       .img {
-        width: 16.25rem;
+        width: 18rem;
         height: 70px;
         margin-bottom: 1.2rem;
+        margin-left: -9px;
         @media (max-width: 884px) {
           width: 250px;
           height: 70px;

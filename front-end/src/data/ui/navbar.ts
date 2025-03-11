@@ -10,8 +10,8 @@ export const MENU: NavbarItemProps[] = [
         link: '/quem-somos',
       },
       {
-        label: 'Nossas Unidades',
-        link: '/nossas-unidades',
+        label: 'Unidades Licenciadas',
+        link: '/unidades-licenciadas',
       },
       {
         label: 'Apresentação Institucional',
