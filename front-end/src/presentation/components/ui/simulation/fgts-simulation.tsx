@@ -27,7 +27,7 @@ const FgtsSimulation: React.FC<FgtsSimulationProps> = ({ backgroundColor, color 
             <span className={S['currency']}>R$</span>
             <input type="number" placeholder="Ex.: 4.000,00" className={S['input']} min="0" inputMode="numeric" />
             <Link
-              href="https://api.whatsapp.com/send?phone=5519988335683&text=Ol%C3%A1,%20gostaria%20de%20simular%20minha%20antecipa%C3%A7%C3%A3o%20do%20FGTS"
+              href="https://wa.me/message/DIKVSOOIFZJZK1"
               target="_blank"
               rel="noopener noreferrer"
               legacyBehavior
