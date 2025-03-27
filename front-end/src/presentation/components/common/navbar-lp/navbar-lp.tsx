@@ -14,8 +14,9 @@ import S from './navbar-lp.module.scss'
 
 const NavbarLP = () => {
   const [isSideMenuOpen, setSideMenu] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, link: string) => {
+  const handleClick = async (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, link: string) => {
     if (link.startsWith('#')) {
       e.preventDefault()
       const targetId = link.substring(1)
@@ -23,6 +24,26 @@ const NavbarLP = () => {
 
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else if (link === 'https://wa.me/message/QZWPKWC2TWGLB1') {
+      // Send webhook request before navigating to WhatsApp
+      setLoading(true)
+      try {
+        const response = await fetch('/api/control', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: 'Vim pelo Navbar' }),
+        })
+
+        if (!response.ok) {
+          console.error('Failed to send message to webhook.')
+        }
+      } catch (error) {
+        console.error('Error sending request:', error)
+      } finally {
+        setLoading(false)
       }
     }
   }
@@ -69,14 +90,9 @@ const NavbarLP = () => {
               </div>
             ))}
           </div>
-          <Link
-            href="https://wa.me/message/QZWPKWC2TWGLB1"
-            target="_blank"
-            rel="noopener noreferrer"
-            legacyBehavior
-          >
+          <Link href="https://wa.me/message/QZWPKWC2TWGLB1" target="_blank" rel="noopener noreferrer" legacyBehavior>
             <div className={S['button-section']}>
-              <a className={S.link}>
+              <a className={S.link} onClick={(e) => handleClick(e, 'https://wa.me/message/QZWPKWC2TWGLB1')}>
                 <span>Fale Conosco</span>
               </a>
               <ICON.IconBrandWhatsapp className={S.icon} />

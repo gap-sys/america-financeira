@@ -2,10 +2,10 @@ import { useState } from 'react'
 import S from './faq-fgts.module.scss'
 import Link from 'next/link'
 import { ICON } from 'src/presentation/assets'
-import FaleConoscoNav from '../button/fale-conosco'
 
 const FaqFGTS = () => {
   const [activeIndex, setActiveIndex] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const faqs = [
     {
@@ -33,6 +33,27 @@ const FaqFGTS = () => {
 
   const toggleFaq = (index: any) => {
     setActiveIndex(activeIndex === index ? null : index)
+  }
+
+  const handleClick = async () => {
+    setLoading(true)
+    try {
+      const response = await fetch('/api/control', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: 'Vim pelo FAQ' }),
+      })
+
+      if (!response.ok) {
+        console.error('Failed to send message to webhook.')
+      }
+    } catch (error) {
+      console.error('Error sending request:', error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -63,7 +84,7 @@ const FaqFGTS = () => {
           rel="noopener noreferrer"
           legacyBehavior
         >
-          <div className={S['button-section']}>
+          <div className={S['button-section']} onClick={handleClick}>
             <a className={S.link}>
               <span>Fale Conosco</span>
             </a>

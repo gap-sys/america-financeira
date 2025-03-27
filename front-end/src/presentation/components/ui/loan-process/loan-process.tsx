@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import S from './loan-process.module.scss'
 import Image from 'next/image'
 import { ICON, IMAGE } from 'src/presentation/assets'
 import Link from 'next/link'
 
 const LoanProcess = () => {
+  const [loading, setLoading] = useState(false)
+
+  const handleClick = async () => {
+    setLoading(true)
+    try {
+      const response = await fetch('/api/control', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: 'Vim pelo site' }),
+      })
+
+      if (!response.ok) {
+        console.error('Failed to send message to webhook.')
+      }
+    } catch (error) {
+      console.error('Error sending request:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className={S['container-box']}>
       <div id="como-obter" className={S['container']}>
@@ -39,7 +62,7 @@ const LoanProcess = () => {
             rel="noopener noreferrer"
             legacyBehavior
           >
-            <div className={S['button-section']}>
+            <div className={S['button-section']} onClick={handleClick}>
               <a className={S.link}>
                 <span>Fale Conosco</span>
               </a>

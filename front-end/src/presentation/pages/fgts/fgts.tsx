@@ -1,18 +1,6 @@
-import {
-  FaqFGTS,
-  FgtsSimulation,
-  FooterLP,
-  HeaderLP,
-  LoanProcess,
-  Meta,
-  NavbarLP,
-  Reviews,
-} from 'src/presentation/components'
-
+import { FaqFGTS, FgtsSimulation, FooterLP, HeaderLP, LoanProcess, Meta, NavbarLP, Reviews } from 'src/presentation/components'
 import { ICON, IMAGE } from 'src/presentation/assets'
-
 import { IconCheck, IconWallet, IconClock, IconUsers, IconBuildingStore, IconMedal } from '@tabler/icons-react'
-
 import S from './fgts.module.scss'
 import Link from 'next/link'
 import { useState, useEffect } from 'react' // ✅ Importando hooks
@@ -111,6 +99,24 @@ const Fgts = () => {
 
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+  
+  const handleClick = async () => {
+    try {
+      const response = await fetch('/api/control', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: 'Vim pelo site' }),
+      })
+
+      if (!response.ok) {
+        console.error('Failed to send message to webhook.')
+      }
+    } catch (error) {
+      console.error('Error sending request:', error)
+    }
+  }
 
   return (
     <div className={S.container}>
@@ -176,7 +182,7 @@ const Fgts = () => {
             legacyBehavior
           >
             <div className={S['button-section']}>
-              <a className={S.link}>
+              <a className={S.link} onClick={handleClick}>
                 <span>Fale Conosco</span>
               </a>
               <ICON.IconBrandWhatsapp className={S.icon} />
@@ -200,6 +206,7 @@ const Fgts = () => {
         target="_blank"
         rel="noopener noreferrer"
         className={S['whatsapp-button']}
+        onClick={handleClick}
       >
         <ICON.IconBrandWhatsapp className={S.icon} />
       </a>
