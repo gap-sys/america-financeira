@@ -58,7 +58,7 @@ const FaqFGTS = () => {
       </div>
       <div className={S['button-container']}>
         <Link
-          href="https://wa.me/message/LC3CCN7V7FW4E1"
+          href="https://wa.me/message/QZWPKWC2TWGLB1"
           target="_blank"
           rel="noopener noreferrer"
           legacyBehavior

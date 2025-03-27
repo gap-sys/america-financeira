@@ -28,7 +28,7 @@ const HeaderLP = ({ title, subtitle, image, paragraph }: HeaderProps) => (
         <h1 className={S.title}>{title}</h1>
         {paragraph && <p className={S.paragraph}>{paragraph}</p>}
         <Link
-          href="https://wa.me/message/DIKVSOOIFZJZK1"
+          href="https://wa.me/message/QZWPKWC2TWGLB1"
           target="_blank"
           rel="noopener noreferrer"
           legacyBehavior

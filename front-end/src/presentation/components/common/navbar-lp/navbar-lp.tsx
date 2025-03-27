@@ -70,7 +70,7 @@ const NavbarLP = () => {
             ))}
           </div>
           <Link
-            href="https://wa.me/message/LXJ2657IIAMFM1"
+            href="https://wa.me/message/QZWPKWC2TWGLB1"
             target="_blank"
             rel="noopener noreferrer"
             legacyBehavior

@@ -170,7 +170,7 @@ const Fgts = () => {
         </div>
         <div className={S['button-container']}>
           <Link
-            href="https://wa.me/message/TQUQ7PGVACEWO1"
+            href="https://wa.me/message/QZWPKWC2TWGLB1"
             target="_blank"
             rel="noopener noreferrer"
             legacyBehavior
@@ -196,7 +196,7 @@ const Fgts = () => {
       <FooterLP />
 
       <a
-        href="https://wa.me/message/GBUEOD4FLSNIK1"
+        href="https://wa.me/message/QZWPKWC2TWGLB1"
         target="_blank"
         rel="noopener noreferrer"
         className={S['whatsapp-button']}
